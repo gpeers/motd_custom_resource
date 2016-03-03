@@ -1,7 +1,5 @@
-require 'chefspec'
-require 'chefspec/berkshelf'
-require 'chefspec/cacher'
-require 'poise_boiler/spec_helper'
+
+require 'spec_helper'
 require_relative '../../../libraries/motd'
 
 describe MotdCookbook::Motd do
