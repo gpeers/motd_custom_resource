@@ -1,3 +1,6 @@
+#
+# DISREGARD THIS FILE FOR LEARNING ABOUT CUSTOM resources
+#
 module MotdCookbook
   class Motd < Chef::Resource
     resource_name :motd

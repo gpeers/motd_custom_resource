@@ -1,3 +1,6 @@
+#
+# DISREGARD THIS FILE FOR LEARNING ABOUT CUSTOM resources
+#
 require 'spec_helper'
 require_relative '../../../libraries/motd'
 

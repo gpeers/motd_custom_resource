@@ -4,10 +4,13 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+# This cookbook as no default recipe, we test against the
+# cookbook in test/fixtures/cookbooks/text
+
 require 'spec_helper'
 
 describe 'test::default' do
-  context 'When all attributes are default, on an unspecified platform' do
+  context 'stepping into motd' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new(step_into: 'motd')
       runner.converge(described_recipe)
@@ -15,6 +18,17 @@ describe 'test::default' do
 
     it 'renders /etc/motd' do
       expect(chef_run).to render_file('/etc/motd').with_content('Hello')
+    end
+  end
+
+  context 'using motd resource' do
+    let(:chef_run) do
+      runner = ChefSpec::ServerRunner.new()
+      runner.converge(described_recipe)
+    end
+
+    it 'renders /etc/motd' do
+      expect(chef_run).to create_motd('Hello').with_message(/Hello/)
     end
   end
 end
