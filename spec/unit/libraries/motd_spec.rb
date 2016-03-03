@@ -13,6 +13,10 @@ describe MotdCookbook::Motd do
       motd 'Testing'
     end
 
+    # the 'step_into' view
     it { is_expected.to render_file('/etc/motd').with_content("Testing")}
+
+    # the external view
+    it { is_expected.to create_motd('Testing').with_message("Testing")}
   end
 end
