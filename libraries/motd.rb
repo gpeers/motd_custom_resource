@@ -1,3 +1,7 @@
+require 'poise'
+
+class Motd < ChefCompat::Resource
+include Poise(fused: true)
 
 resource_name :motd
 
@@ -9,4 +13,6 @@ action :create do
     content "#{message}"
     mode '0644'
   end
+end
+
 end
