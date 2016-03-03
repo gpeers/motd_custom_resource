@@ -17,5 +17,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[motd_cr::default]
+      - recipe[test::default]
     attributes:

@@ -3,7 +3,7 @@
 Purpose: Demonstrate simplest possible cookbook with resources and testing
 
 
-# Integration test:
+# Integration test (not working ATM while I hack at unit testing)
 
 ```
 export KITCHEN_LOCAL_YAML=.kitchen.dokken.yml
