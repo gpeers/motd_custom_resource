@@ -2,12 +2,11 @@ require 'chefspec'
 require 'chefspec/berkshelf'
 require 'chefspec/cacher'
 require 'poise_boiler/spec_helper'
-require 'compat_resource'
 #require_relative '../../../resources/motd'
 require_relative '../../../libraries/motd'
 
 
-describe 'motd' do
+describe MotdCookbook::Motd do
   step_into(:motd)
   before do
     recipe = double('Chef::Recipe')
