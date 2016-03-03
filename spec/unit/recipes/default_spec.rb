@@ -6,15 +6,15 @@
 
 require 'spec_helper'
 
-describe 'motd_cr::default' do
+describe 'test::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new
+      runner = ChefSpec::ServerRunner.new(step_into: 'motd')
       runner.converge(described_recipe)
     end
 
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
+    it 'renders /etc/motd' do
+      expect(chef_run).to render_file('/etc/motd').with_content('Hello')
     end
   end
 end
